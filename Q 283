@@ -1,0 +1,38 @@
+vector<int> nums;
+	int val;
+	int k1;
+	int k2;
+	for (k1 = 0; k1 < 4; k1++)
+	{
+		cin >> k2;
+		nums.push_back(k2);
+	}
+	cin >> val;
+	int i, k, j;
+	j = 0;
+	int temp = 0;
+	k = nums.size();
+	cout << k;
+	for (i = 0; i<nums.size(); i++)
+	{
+		if (i>j)
+			j = i;
+		while (nums[j] == val&&j<nums.size() - 1)
+			j++;
+		if (nums[i] == val)
+		{
+			temp = nums[i];
+			nums[i] = nums[j];
+			nums[j] = temp;
+			j++;
+			k--;
+			cout << k<<endl;
+		}
+
+		if (j >= nums.size())
+			break;
+	}
+	
+
+}
+
